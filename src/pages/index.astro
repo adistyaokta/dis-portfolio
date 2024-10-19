@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import '../styles/global.css';
 import Hero from '../components/Hero.astro';
 import Projects from '../components/Projects.astro';
 import Nav from '../components/Nav.astro';
@@ -14,7 +13,7 @@ import Menu from '../components/Menu.astro';
 <Layout title='Adistya Okta'>
   <Nav />
   <Hero />
-  <div class='flex flex-col gap-14'>
+  <div class='flex flex-col gap-14 min-w-full max-w-full'>
     <Projects />
     <Skills />
     <About />

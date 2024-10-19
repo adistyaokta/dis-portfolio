@@ -9,7 +9,7 @@ type SkillCardProps = {
 const { skillName, icon, iconSize = 50 } = Astro.props as SkillCardProps;
 ---
 
-<div class='container aspect-square flex flex-col p-1 gap-1 bg-secondary/95'>
+<div class='flex flex-col p-1 gap-1 bg-secondary/95'>
   <!-- <div class='flex-1 bg-accent'>icon</div> -->
   <div class='flex-1 flex justify-center items-center'>
     <Icon name={icon} size={iconSize} color={'#1E1E1C'} />
