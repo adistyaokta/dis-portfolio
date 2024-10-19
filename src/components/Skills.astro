@@ -1,0 +1,25 @@
+---
+import SkillCard from './Cards/SkillCard.astro';
+import Section from './Section.astro';
+---
+
+<Section title='Skills' reverse>
+  <div class='grid grid-cols-3 gap-2'>
+    <SkillCard name='astro' skillName='astro' icon='mdi:react' />
+    <SkillCard name='react' skillName='react' icon='devicon-plain:astro' />
+    <SkillCard
+      name='typescript'
+      skillName='typescript'
+      icon='mdi:language-typescript'
+      iconSize='60'
+    />
+    <SkillCard name='astro' skillName='astro' icon='mdi:react' />
+    <SkillCard name='react' skillName='react' icon='devicon-plain:astro' />
+    <SkillCard
+      name='typescript'
+      skillName='typescript'
+      icon='mdi:language-typescript'
+      iconSize='60'
+    />
+  </div>
+</Section>

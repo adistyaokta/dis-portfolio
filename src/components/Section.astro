@@ -1,0 +1,17 @@
+---
+import { cn } from '../utils/utils';
+
+type SectionProps = {
+  title: string;
+  reverse?: boolean;
+};
+
+const { title, reverse = false } = Astro.props as SectionProps;
+---
+
+<section class='h-full max-h-fit flex flex-col py-2'>
+  <h2 class={cn('capitalize font-extrabold text-xl', reverse && 'text-right')}>
+    {title}
+  </h2>
+  <slot />
+</section>
