@@ -8,35 +8,40 @@ interface ProjectCardProps {
 const { title, reverse = false } = Astro.props as ProjectCardProps;
 ---
 
-<div class='w-full flex gap-1 p-1 bg-secondary/95'>
+<div class='w-full min-h-32 md:min-h-96 flex gap-1 p-1 bg-secondary/95'>
   {
     !reverse && (
-      <div class='w-1/5 flex justify-center items-center h-32 bg-primary'>
+      <div class='w-1/5 flex justify-center items-center bg-primary'>
         {title}
       </div>
     )
   }
   <div class='flex-1 flex flex-col'>
-    <div class='h-2/3 w-full bg-primary/20 flex items-center justify-center'>
+    <div
+      class='h-2/3 md:h-full w-full bg-primary/20 flex items-center justify-center'
+    >
       image placeholder
     </div>
     <div
       class={cn(
-        'font-extrabold uppercase text-xl text-primary',
+        'font-extrabold uppercase text-xl md:text-8xl text-primary',
         reverse && 'text-right'
       )}
     >
       project name
     </div>
     <div
-      class={cn('font-normal text-sm text-primary/70', reverse && 'text-right')}
+      class={cn(
+        'font-normal text-sm md:text-xl text-primary/70',
+        reverse && 'text-right'
+      )}
     >
       project desc
     </div>
   </div>
   {
     reverse && (
-      <div class='w-1/5 flex justify-center items-center h-32 bg-primary'>
+      <div class='w-1/5 flex justify-center items-center bg-primary'>
         {title}
       </div>
     )

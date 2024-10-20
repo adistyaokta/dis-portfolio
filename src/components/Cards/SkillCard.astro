@@ -1,21 +1,38 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { cn } from '../../utils/utils';
 type SkillCardProps = {
   skillName: string;
   icon: string;
+  className: string;
   iconSize?: number;
 };
 
-const { skillName, icon, iconSize = 50 } = Astro.props as SkillCardProps;
+const {
+  skillName,
+  icon,
+  iconSize = 50,
+  className,
+} = Astro.props as SkillCardProps;
 ---
 
-<div class='flex flex-col p-1 gap-1 bg-secondary/95'>
+<div
+  class={cn(
+    'w-full md:min-h-60 flex flex-col p-1 gap-1 bg-secondary/95',
+    className && `${className}`
+  )}
+>
   <!-- <div class='flex-1 bg-accent'>icon</div> -->
   <div class='flex-1 flex justify-center items-center'>
-    <Icon name={icon} size={iconSize} color={'#1E1E1C'} />
+    <Icon
+      name={icon}
+      size={iconSize}
+      color={'#1E1E1C'}
+      class={'md:scale-[3]'}
+    />
   </div>
   <div
-    class='w-full bg-primary flex justify-center items-center font-semibold uppercase'
+    class='w-full min-h-8 max-h-8 md:min-h-16 bg-primary flex justify-center items-center font-semibold uppercase text-sm md:text-3xl md:tracking-widest'
   >
     {skillName}
   </div>

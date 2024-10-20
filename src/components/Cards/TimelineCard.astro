@@ -14,22 +14,24 @@ const odd = index % 2 === 0;
 
 <div
   class={cn(
-    'h-12 max-h-12 w-full flex justify-between items-center',
+    'h-12 max-h-12 md:h-fit md:max-h-full w-full flex justify-between items-center',
     odd ? 'text-primary bg-secondary/95' : 'text-secondary bg-primary/95'
   )}
 >
   <div
     class={cn(
-      'text-sm w-1/4 h-full flex items-center justify-center'
+      'text-sm w-1/4 md:w-fit md:max-w-[15%] md:text-6xl h-full flex items-center justify-center md:font-bold'
       //   odd ? 'text-primary bg-secondary/95' : 'text-secondary bg-primary/95'
     )}
   >
     {time}
   </div>
   <div
-    class={cn('flex-1 h-full flex flex-col items-start justify-center pl-2')}
+    class={cn(
+      'flex-1 h-full flex flex-col items-start justify-center pl-2 md:pl-0'
+    )}
   >
-    <p class='uppercase font-bold text-sm tracking-wide'>{title}</p>
-    <p class='font-normal text-xs'>{content}</p>
+    <p class='uppercase font-bold text-sm md:text-7xl tracking-wide'>{title}</p>
+    <p class='font-normal text-xs md:text-3xl'>{content}</p>
   </div>
 </div>

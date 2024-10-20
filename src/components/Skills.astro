@@ -4,17 +4,27 @@ import Section from './Section.astro';
 ---
 
 <Section title='Skills' reverse>
-  <div class='grid grid-cols-3 gap-2'>
-    <SkillCard name='astro' skillName='astro' icon='mdi:react' />
-    <SkillCard name='react' skillName='react' icon='devicon-plain:astro' />
+  <div class='grid grid-cols-3 md:grid-cols-4 gap-2 md:gap-4'>
+    <SkillCard name='react' skillName='react' icon='mdi:react' />
+    <SkillCard name='astro' skillName='astro' icon='devicon-plain:astro' />
     <SkillCard
       name='typescript'
       skillName='typescript'
       icon='mdi:language-typescript'
       iconSize='60'
     />
-    <SkillCard name='astro' skillName='astro' icon='mdi:react' />
-    <SkillCard name='react' skillName='react' icon='devicon-plain:astro' />
+    <SkillCard
+      name='javascript'
+      skillName='javascript'
+      icon='mdi:language-javascript'
+      iconSize='60'
+    />
+    <SkillCard
+      name='nextjs'
+      skillName='nextjs'
+      icon='devicon-plain:nextjs'
+      className='md:col-start-2'
+    />
     <SkillCard
       name='typescript'
       skillName='typescript'
