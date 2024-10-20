@@ -1,10 +1,8 @@
 ---
-import ContactCard from './Cards/ContactCard.astro';
-import Nav from './Nav.astro';
+import { cn } from '../utils/utils';
 ---
 
-<div class='h-full bg-primary flex flex-col'>
-  <Nav />
+<aside class={cn('sticky top-0 size-full overflow-hidden bg-primary')}>
   <div class='flex flex-col'>
     <div
       class='text-7xl md:text-9xl h-20 md:h-full max-w-full w-full flex items-center justify-end uppercase font-extrabold hover:tracking-wider transition-all duration-300 ease-in-out'
@@ -52,4 +50,4 @@ import Nav from './Nav.astro';
       </div>
     </div>
   </div>
-</div>
+</aside>

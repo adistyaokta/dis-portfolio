@@ -1,4 +1,7 @@
 ---
+import Footer from '../components/Footer.astro';
+import { Nav } from '../components/Nav';
+// import Nav from '../components/Nav.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -21,6 +24,9 @@ const { title } = Astro.props;
   <body
     class='w-dvw min-w-full h-dvh bg-primary text-secondary px-2 py-3 font-raleway flex flex-col gap-14 overflow-x-hidden'
   >
+    <!-- <Nav /> -->
+    <Nav client:load />
     <slot />
+    <Footer />
   </body>
 </html>

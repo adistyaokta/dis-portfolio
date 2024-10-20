@@ -1,22 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Projects from '../components/Projects.astro';
-import Nav from '../components/Nav.astro';
-import Skills from '../components/Skills.astro';
 import About from '../components/About.astro';
 import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
-import Menu from '../components/Menu.astro';
+import Hero from '../components/Hero.astro';
+import { Menu } from '../components/Menu';
+import Projects from '../components/Projects.astro';
+import Skills from '../components/Skills.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title='Adistya Okta'>
-  <Nav />
   <Hero />
   <Projects />
   <Skills />
   <About />
   <Contact />
-  <Footer />
-  <!-- <Menu /> -->
+  <!-- <Menu client:load /> -->
 </Layout>
