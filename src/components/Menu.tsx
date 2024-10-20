@@ -6,8 +6,12 @@ import { Nav } from './Nav';
 
 export const Menu = () => {
   return (
-    <aside className={cn('sticky top-0 flex flex-col overflow-hidden')}>
-      <div className=' flex flex-col py-4'>
+    <aside
+      className={cn(
+        'sticky top-0 h-full flex flex-col justify-between overflow-hidden'
+      )}
+    >
+      <div className=' flex flex-col'>
         <div className='text-7xl md:text-9xl h-20 md:h-full max-w-full w-full flex items-center justify-end uppercase font-extrabold hover:tracking-wider transition-all duration-300 ease-in-out'>
           home
         </div>

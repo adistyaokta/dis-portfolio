@@ -2,6 +2,7 @@ import { useStore } from '@nanostores/react';
 import { useEffect, useState } from 'react';
 import { isMenuOpen } from '../stores/app.store';
 import { Menu } from './Menu';
+import { cn } from '../utils/utils';
 
 export const Nav = () => {
   const $isMenuOpen = useStore(isMenuOpen);
@@ -18,7 +19,7 @@ export const Nav = () => {
   }, [$isMenuOpen]);
 
   return (
-    <div className='flex flex-col'>
+    <div className={cn('flex flex-col size-full', $isMenuOpen && 'min-h-full')}>
       <nav className='w-full min-w-full flex justify-between items-center px-1 py-2'>
         <div className='w-1/3 h-10 max-h-10 flex items-center justify-start font-raleway font-semibold text-xl md:text-5xl'>
           /
