@@ -9,7 +9,7 @@ type SectionProps = {
 const { title, reverse = false } = Astro.props as SectionProps;
 ---
 
-<section class='w-full min-w-full h-fit max-h-fit flex flex-col md:gap-4 py-2'>
+<section class='w-full min-w-full min-h-full flex flex-col md:gap-4 py-2'>
   <h2
     class={cn(
       'capitalize font-extrabold text-xl md:text-5xl',
