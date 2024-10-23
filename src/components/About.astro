@@ -20,21 +20,30 @@ import Section from './Section.astro';
       <div class='flex flex-col gap-0'>
         <TimelineCard
           index='0'
-          time='2024 - now'
           title='frontend web dev'
-          content='wlewlewlwe'
+          time={{
+            from: '2023',
+            to: '2024',
+          }}
+          content='at PT digidaw'
         />
         <TimelineCard
           index='1'
-          time='2023 - 2024'
           title='frontend web dev'
-          content='wlewlewlwe'
+          time={{
+            from: '2023',
+            to: '2023',
+          }}
+          content='at PT Gudang Garam Jaya'
         />
         <TimelineCard
           index='2'
-          time='2019 - 2023'
           title='frontend web dev'
-          content='wlewlewlwe'
+          time={{
+            from: '2019',
+            to: '2023',
+          }}
+          content='at PT digidaw'
         />
       </div>
     </div>

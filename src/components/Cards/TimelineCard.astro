@@ -3,7 +3,10 @@ import { cn } from '../../utils/utils';
 
 type TimelineCardProps = {
   index: number;
-  time: string;
+  time: {
+    from: string;
+    to: string;
+  };
   title: string;
   content: string;
 };
@@ -14,24 +17,29 @@ const odd = index % 2 === 0;
 
 <div
   class={cn(
-    'h-12 max-h-12 md:h-fit md:max-h-full w-full flex justify-between items-center',
-    odd ? 'text-primary bg-secondary/95' : 'text-secondary bg-primary/95'
+    'h-12 max-h-12 md:h-fit md:max-h-full w-full flex justify-between items-center divide-x-2',
+    odd
+      ? 'text-primary bg-secondary/95 divide-primary'
+      : 'text-secondary bg-primary/95 '
   )}
 >
   <div
     class={cn(
-      'text-sm w-1/4 md:w-fit md:max-w-[15%] md:text-6xl h-full flex items-center justify-center md:font-bold'
-      //   odd ? 'text-primary bg-secondary/95' : 'text-secondary bg-primary/95'
+      'text-base w-1/4 md:w-1/6 md:text-5xl h-full flex justify-center items-center md:justify-between font-anton tracking-wide'
     )}
   >
-    {time}
+    <p class='md:w-1/2 text-right md:px-2'>{time.from}</p>
+    {'-'}
+    <p class='md:w-1/2 text-right md:px-2'>{time.to}</p>
   </div>
   <div
     class={cn(
-      'flex-1 h-full flex flex-col items-start justify-center pl-2 md:pl-0'
+      'flex-1 h-full flex flex-col items-start justify-center pl-2 py-2'
     )}
   >
-    <p class='uppercase font-bold text-sm md:text-7xl tracking-wide'>{title}</p>
+    <p class='uppercase font-anton text-xl md:text-7xl tracking-wide'>
+      {title}
+    </p>
     <p class='font-normal text-xs md:text-3xl'>{content}</p>
   </div>
 </div>
