@@ -12,6 +12,7 @@ export default {
 		fontFamily: {
 			'raleway': ['Raleway', 'sans-serif'],
 			'jersey': ['"Jersey 25"'],
+			'anton': ['Anton'],
 		}
 	},
 	plugins: [],
