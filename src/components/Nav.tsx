@@ -35,22 +35,25 @@
 //   );
 // };
 
-
 import { useStore } from '@nanostores/react';
-import React from 'react'
+import React from 'react';
 import { isMenuOpen } from '../stores/app.store';
 
 export const Nav = () => {
   const $isMenuOpen = useStore(isMenuOpen);
   const toggleMenu = () => {
     isMenuOpen.set(!$isMenuOpen);
-    console.log('a')
   };
 
   return (
-    <nav className='min-h-10 md:h-14 w-full flex justify-between items-center px-2 text-secondary bg-transparent'>
-      <div className='font-jersey text-3xl'>dis</div>
-      <div className='uppercase font-raleway font-bold text-xl md:text-4xl cursor-pointer' onClick={toggleMenu}>Menu</div>
+    <nav className='min-h-10 md:h-14 w-full flex justify-between items-center px-2 text-secondary/90 bg-transparent select-none'>
+      <div className='font-jersey text-3xl md:text-5xl'>dis</div>
+      <div
+        className='py-2 h-full flex justify-end items-center uppercase font-bold font-raleway text-4xl hover:cursor-pointer'
+        onClick={toggleMenu}
+      >
+        {$isMenuOpen ? 'close' : 'menu'}
+      </div>
     </nav>
-  )
-}
+  );
+};
