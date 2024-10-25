@@ -1,13 +1,12 @@
 ---
 import ContactCard from './Cards/ContactCard.astro';
 import Section from './Section.astro';
+
+import { contactLink } from '../types/constant';
 ---
 
 <Section title='Contact'>
   <div class='flex flex-col'>
-    <ContactCard name='email' />
-    <ContactCard name='linkedin' />
-    <ContactCard name='github' />
-    <ContactCard name='instagram' />
+    {contactLink.map((item) => <ContactCard name={item.name} />)}
   </div>
 </Section>

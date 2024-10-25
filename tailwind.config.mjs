@@ -13,6 +13,7 @@ export default {
 			'raleway': ['Raleway', 'sans-serif'],
 			'jersey': ['"Jersey 25"'],
 			'anton': ['Anton'],
+			'orbitron': ['Orbitron'],
 		}
 	},
 	plugins: [],

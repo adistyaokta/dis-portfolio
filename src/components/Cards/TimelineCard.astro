@@ -25,11 +25,11 @@ const odd = index % 2 === 0;
 >
   <div
     class={cn(
-      'text-base w-1/4 md:w-1/6 md:text-5xl h-full flex justify-center items-center md:justify-between font-anton tracking-wide'
+      'text-base w-1/4 md:w-1/6 md:text-5xl h-full flex justify-center items-center px-1 md:px-4 md:justify-between font-anton tracking-wide'
     )}
   >
     <p class='md:w-1/2 text-right md:px-2'>{time.from}</p>
-    {'-'}
+    <p class='w-1/2 text-center'>{'-'}</p>
     <p class='md:w-1/2 text-right md:px-2'>{time.to}</p>
   </div>
   <div
@@ -37,7 +37,7 @@ const odd = index % 2 === 0;
       'flex-1 h-full flex flex-col items-start justify-center pl-2 py-2'
     )}
   >
-    <p class='uppercase font-anton text-4xl md:text-7xl'>
+    <p class='uppercase font-anton text-4xl md:text-8xl'>
       {title}
     </p>
     <p class='font-normal text-xs md:text-3xl'>{content}</p>
