@@ -3,16 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
 *::-webkit-scrollbar {
-  width: 1px;
+  width: 0px;
 }
 
-*::-webkit-scrollbar-track {
+/* *::-webkit-scrollbar-track {
   background: #1e1e1c;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: #e1e1e1;
-}
+} */
 
 ::selection {
   background: #008080;
