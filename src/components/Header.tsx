@@ -12,7 +12,7 @@ export const Header = () => {
     <header
       className={cn(
         'fixed w-full h-fit z-50 bg-clip-padding backdrop-filter backdrop-blur-sm bg-primary/50 border-b border-secondary/70',
-        $isMenuOpen && 'h-full bg-primary'
+        $isMenuOpen && 'h-full bg-primary '
       )}
     >
       <Nav />
