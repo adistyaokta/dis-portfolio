@@ -36,4 +36,27 @@ const { title } = Astro.props;
       </div>
     </SmoothScroll>
   </body>
+
+  <script>
+    import { isMobile } from '../stores/app.store';
+    // Function to check mobile status
+    const checkMobile = () => {
+      if (window.innerWidth < 768) {
+        isMobile.set(true);
+      } else {
+        isMobile.set(false);
+      }
+    };
+
+    // Run on component mount
+    window.addEventListener('load', checkMobile);
+
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+
+    // Cleanup function to remove listeners
+    window.addEventListener('unload', () => {
+      window.removeEventListener('resize', checkMobile);
+    });
+  </script>
 </html>

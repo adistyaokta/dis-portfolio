@@ -1,42 +1,67 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useEffect } from 'react';
+import { useStore } from '@nanostores/react';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { isMobile } from '../stores/app.store';
+import { anim } from '../utils/utils';
 
 export const Hero = () => {
   const { scrollY } = useScroll();
-  const scale = useTransform(scrollY, [0, 500], [1, 2]);
-  const translateY = useTransform(scrollY, [0, 500], [0, -75]);
+  const $isMobile = useStore(isMobile);
+
+  const opacity = {
+    initial: {
+      opacity: 0,
+    },
+    enter: {
+      opacity: 1,
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
+
+  const scale = useTransform(
+    scrollY,
+    [0, $isMobile ? 200 : 500],
+    [1, $isMobile ? 3.75 : 2.5]
+  );
+
+  const y = useTransform(
+    scrollY,
+    [0, 700],
+    ['0%', $isMobile ? '300%' : '250%']
+  );
+
+  const x = useTransform(
+    scrollY,
+    [0, 700],
+    ['0%', $isMobile ? '-400%' : '-110%']
+  );
+
+  const springScale = useSpring(scale, { stiffness: 200, damping: 30 });
+  const springY = useSpring(y, { stiffness: 300, damping: 30 });
+  const springX = useSpring(x, { stiffness: 300, damping: 30 });
 
   return (
-    <div className='w-full h-full min-h-dvh flex flex-col justify-between select-none'>
+    <motion.div
+      {...anim(opacity)}
+      className='w-full h-full min-h-dvh flex flex-col justify-between select-none'
+    >
       <div className='flex flex-col flex-1 justify-center items-start font-anton overflow-hidden text-secondary uppercase'>
         <motion.div
-          // initial={{ x: '-100%' }}
-          // animate={{ x: '0%' }}
-          // transition={{
-          //   duration: 2,
-          //   ease: 'easeInOut',
-          // }}
-          // style={{
-          //   // scale,
-          //   translateY,
-          //   originX: 0,
-          // }}
+          style={{
+            scale: springScale,
+            originX: 0,
+            y: springY,
+          }}
           className='text-6xl md:text-[15rem] leading-none'
         >
           Adistya
         </motion.div>
         <motion.div
-          // initial={{ y: '-20%', opacity: 0 }}
-          // animate={{ y: '0%', opacity: 1 }}
-          // transition={{
-          //   duration: 1,
-          //   delay: 1,
-          //   ease: 'easeInOut',
-          // }}
-          // style={{
-          //   // scale: useTransform(scrollY, [0, 500], [1, 0]),
-          //   originX: 0,
-          // }}
+          style={{
+            opacity: useTransform(scrollY, [0, 250], [1, 0]),
+            x: springX,
+          }}
           className='text-4xl md:text-[10rem] leading-none'
         >
           Oktaviano
@@ -51,22 +76,10 @@ export const Hero = () => {
               ■
             </span>{' '}
             Based in Indonesia
-            <motion.div
-              // initial={{ opacity: 0.5 }}
-              // animate={{ opacity: 1 }}
-              // transition={{
-              //   duration: 2,
-              //   ease: 'easeInOut',
-              // }}
-              // style={{
-              //   scale: useTransform(scrollY, [0, 500], [0, 1]),
-              //   originX: 1,
-              // }}
-              className='flex-1 h-1 md:hidden bg-secondary'
-            ></motion.div>
+            <div className='flex-1 h-1 md:hidden bg-secondary'></div>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

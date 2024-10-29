@@ -3,7 +3,7 @@ import ProjectCard from '../Cards/ProjectCard.astro';
 import { Section } from '../Shared/Section';
 ---
 
-<Section title='Projects'>
+<Section title='Projects' client:load>
   <div class='flex flex-col gap-1 w-full h-full'>
     <ProjectCard title='project title' />
     <ProjectCard title='project title' />
