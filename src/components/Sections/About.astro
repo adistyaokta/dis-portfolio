@@ -1,5 +1,6 @@
 ---
 import TimelineCard from '../Cards/TimelineCard.astro';
+import { Paragraph, Word } from '../Shared/Paragraph';
 import { Section } from '../Shared/Section';
 ---
 
@@ -13,9 +14,11 @@ import { Section } from '../Shared/Section';
       suscipit sem, lacinia vulputate justo.
     </div>
   </Section>
-  <Section title='Experience' reverse client:load>
+  <Section title='Experience' client:load>
     <div class=''>
-      <div class='font-medium text-xs md:text-xl'>Work | Education</div>
+      <div class='font-medium text-xs md:text-xl text-right'>
+        Work | Education
+      </div>
       <div class='flex flex-col gap-0'>
         <TimelineCard
           index='0'

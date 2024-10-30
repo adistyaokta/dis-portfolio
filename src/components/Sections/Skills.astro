@@ -3,8 +3,8 @@ import SkillCard from '../Cards/SkillCard.astro';
 import { Section } from '../Shared/Section';
 ---
 
-<Section title='Skills' reverse client:load>
-  <div class='grid grid-cols-3 md:grid-cols-4 gap-2 md:gap-4'>
+<Section title='Skills' client:load>
+  <div class='grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4'>
     <SkillCard name='react' skillName='react' icon='mdi:react' />
     <SkillCard name='astro' skillName='astro' icon='devicon-plain:astro' />
     <SkillCard
