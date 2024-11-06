@@ -1,35 +1,32 @@
 ---
-import SkillCard from '../Cards/SkillCard.astro';
+import { SkillCard } from '../Cards/SkillCard';
 import { Section } from '../Shared/Section';
 ---
 
 <Section title='Skills' client:load>
   <div class='grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4'>
-    <SkillCard name='react' skillName='react' icon='mdi:react' />
-    <SkillCard name='astro' skillName='astro' icon='devicon-plain:astro' />
+    <SkillCard skillName='react' icon='mdi:react' client:load />
+    <SkillCard skillName='astro' icon='devicon-plain:astro' client:load />
     <SkillCard
-      name='typescript'
       skillName='typescript'
       icon='mdi:language-typescript'
-      iconSize='60'
+      client:load
     />
     <SkillCard
-      name='javascript'
       skillName='javascript'
       icon='mdi:language-javascript'
-      iconSize='60'
+      client:load
     />
     <SkillCard
-      name='nextjs'
       skillName='nextjs'
       icon='devicon-plain:nextjs'
       className='md:col-start-2'
+      client:load
     />
     <SkillCard
-      name='typescript'
       skillName='typescript'
       icon='mdi:language-typescript'
-      iconSize='60'
+      client:load
     />
   </div>
 </Section>

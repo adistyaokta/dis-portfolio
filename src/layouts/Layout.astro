@@ -23,23 +23,18 @@ const { title } = Astro.props;
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class='h-dvh w-dvw min-h-dvh min-w-full flex-1 antialiased'>
+  <body
+    class='h-dvh w-dvw min-h-dvh min-w-full flex-1 bg-primary font-raleway text-secondary antialiased'
+  >
+    <Header client:load />
     <SmoothScroll client:load>
-      <div class='bg-primary overflow-hidden'>
-        <Header client:load />
-        <div
-          class='size-full flex-1 px-2 md:px-10 flex flex-col gap-10 text-secondary font-raleway antialiased overflow-y-scroll overflow-x-hidden'
-        >
-          <slot />
-        </div>
-        <Footer />
-      </div>
+      <slot />
     </SmoothScroll>
+    <Footer />
   </body>
 
   <script>
     import { isMobile } from '../stores/app.store';
-    // Function to check mobile status
     const checkMobile = () => {
       if (window.innerWidth < 768) {
         isMobile.set(true);
@@ -48,13 +43,10 @@ const { title } = Astro.props;
       }
     };
 
-    // Run on component mount
     window.addEventListener('load', checkMobile);
 
-    // Add resize listener
     window.addEventListener('resize', checkMobile);
 
-    // Cleanup function to remove listeners
     window.addEventListener('unload', () => {
       window.removeEventListener('resize', checkMobile);
     });

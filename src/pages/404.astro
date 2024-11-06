@@ -1,9 +1,30 @@
 ---
+import { Icon } from 'astro-icon/components';
+import Footer from '../components/Footer.astro';
+import { Header } from '../components/Header';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title=':('>
-  <div class='flex-1 flex items-center justify-center'>
-    <p class='text-9xl font-bold'>Nothing :(</p>
-  </div>
-</Layout>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='description' content='Adistya Oktaviano Portfolio' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+  <meta name='generator' content={Astro.generator} />
+  <title>{'Not Found 😕'}</title>
+</head>
+<div
+  class='bg-primary h-dvh flex flex-col justify-center items-center text-secondary'
+>
+  <p class='text-xl font-bold'>I think you might be a little lost.</p>
+  <a
+    href='/'
+    class='flex justify-center items-center gap-2 my-5 group underline-offset-4 hover:underline transition-all duration-300'
+  >
+    <Icon
+      name='mdi:arrow-left'
+      size={20}
+      class={'group-hover:-translate-x-1 transition-all duration-300'}
+    />Lets go back
+  </a>
+</div>

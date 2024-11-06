@@ -1,16 +1,16 @@
 ---
 import { Hero } from '../components/Hero';
-import About from '../components/Sections/About.astro';
+import { About } from '../components/Sections/About';
 import Contact from '../components/Sections/Contact.astro';
 import Projects from '../components/Sections/Projects.astro';
-import Skills from '../components/Sections/Skills.astro';
+import { Skills } from '../components/Sections/Skills';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title='Adistya Okta'>
   <Hero client:load />
   <Projects />
-  <Skills />
-  <About />
-  <!-- <Contact /> -->
+  <Skills client:load />
+  <About client:load />
+  <Contact />
 </Layout>

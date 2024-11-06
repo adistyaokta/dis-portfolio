@@ -8,9 +8,11 @@ import { Paragraph } from './Paragraph';
 type SectionProps = {
   title: string;
   children: React.ReactNode;
+  ref?: any;
+  minHeight?: string;
 };
 
-export const Section = ({ title, children }: SectionProps) => {
+export const Section = ({ title, children, ref, minHeight }: SectionProps) => {
   const $isMobile = useStore(isMobile);
   const { scrollY } = useScroll();
 
@@ -22,31 +24,14 @@ export const Section = ({ title, children }: SectionProps) => {
 
   return (
     <motion.section
-      // style={{
-      //   opacity: useTransform(
-      //     scrollY,
-      //     [0, 300],
-      //     ['0%', $isMobile ? '100%' : '250%']
-      //   ),
-      // }}
-      className='w-full min-w-full min-h-dvh flex flex-col justify-center py-2'
+      ref={ref}
+      className={cn(
+        `w-full min-w-full flex flex-col justify-start`,
+        minHeight && `${minHeight}`
+      )}
     >
       <div className='flex flex-col'>
         <Paragraph value={title} />
-        {/* <h2
-          className={cn(
-            'capitalize font-extrabold text-xl md:text-5xl',
-            reverse && 'text-right'
-          )}
-        >
-          <motion.span
-            style={{
-              y: y,
-            }}
-          >
-            {title}
-          </motion.span>
-        </h2> */}
         {children}
       </div>
     </motion.section>

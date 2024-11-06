@@ -4,7 +4,7 @@ import ContactCard from '../Cards/ContactCard.astro';
 import { Section } from '../Shared/Section';
 ---
 
-<Section title='Contact' client:load>
+<Section minHeight='min-h-[50dvh]' title='Contact' client:load>
   <div class='flex flex-col'>
     {contactLink.map((item) => <ContactCard name={item.name} />)}
   </div>

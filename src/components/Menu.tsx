@@ -2,9 +2,11 @@ import { contactLink, navLink } from '../types/constant';
 
 const Item = ({ name, path }: { name: string; path?: string }) => {
   return (
-    <div className='size-full border-b-2 flex items-center justify-end text-7xl font-black font-raleway leading-normal uppercase '>
-      {name}
-    </div>
+    <a href={path} className='size-full'>
+      <div className='size-full border-b-2 flex items-center justify-end text-7xl font-black font-raleway leading-normal uppercase hover:tracking-wide hover:md:tracking-widest transition-all duration-300'>
+        {name}
+      </div>
+    </a>
   );
 };
 

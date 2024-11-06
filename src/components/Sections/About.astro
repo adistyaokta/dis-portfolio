@@ -1,7 +1,28 @@
 ---
-import TimelineCard from '../Cards/TimelineCard.astro';
+import { useRef } from 'react';
+import { TimelineCard } from '../Cards/TimelineCard';
 import { Paragraph, Word } from '../Shared/Paragraph';
 import { Section } from '../Shared/Section';
+import { useScroll } from 'framer-motion';
+
+const works = [
+  {
+    title: 'frontend web dev',
+    time: { from: '2023', to: '2024' },
+    content: 'at PT digidaw',
+  },
+  {
+    title: 'frontend web dev',
+    time: { from: '2023', to: '2024' },
+    content: 'at PT digidaw',
+  },
+];
+
+const element = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: element,
+    offset: ['start 0.8', 'start 0.45'],
+  });
 ---
 
 <div class='w-full flex flex-col gap-14'>
@@ -20,8 +41,26 @@ import { Section } from '../Shared/Section';
         Work | Education
       </div>
       <div class='flex flex-col gap-0'>
-        <TimelineCard
-          index='0'
+        {
+          works.map((work, index) => {
+            const start = index / works.length;
+            const end = start + 1 / works.length;
+            return (
+              <TimelineCard
+                index={index}
+                progress={}
+                title='frontend web dev'
+                time={{
+                  from: '2023',
+                  to: '2024',
+                }}
+                content='at PT digidaw'
+              />
+            );
+          })
+        }
+        <!-- <TimelineCard
+          index={0}
           title='frontend web dev'
           time={{
             from: '2023',
@@ -30,7 +69,7 @@ import { Section } from '../Shared/Section';
           content='at PT digidaw'
         />
         <TimelineCard
-          index='1'
+          index={1}
           title='frontend web dev'
           time={{
             from: '2023',
@@ -39,14 +78,14 @@ import { Section } from '../Shared/Section';
           content='at PT Gudang Garam Jaya'
         />
         <TimelineCard
-          index='2'
+          index={2}
           title='frontend web dev'
           time={{
             from: '2019',
             to: '2023',
           }}
           content='at PT digidaw'
-        />
+        /> -->
       </div>
     </div>
   </Section>
