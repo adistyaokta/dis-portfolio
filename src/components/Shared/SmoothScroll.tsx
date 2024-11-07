@@ -6,8 +6,7 @@ export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
     <ReactLenis
       root
       options={{
-        lerp: 0.1,
-        duration: 3,
+        duration: 1.5,
         smoothWheel: true,
       }}
     >

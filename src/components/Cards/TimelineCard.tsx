@@ -32,7 +32,7 @@ export const TimelineCard = ({
         y,
       }}
       className={cn(
-        'h-20 md:h-fit md:max-h-full w-full flex justify-between items-center divide-x-2',
+        'h-12 md:h-fit md:max-h-full w-full flex justify-between items-center divide-x-2',
         odd
           ? 'text-primary bg-secondary/95 divide-primary'
           : 'text-secondary bg-primary/95 '
@@ -52,7 +52,7 @@ export const TimelineCard = ({
           'flex-1 h-full flex flex-col items-start justify-center pl-2 py-2'
         )}
       >
-        <p className='uppercase font-anton text-4xl md:text-8xl'>{title}</p>
+        <p className='uppercase font-anton text-2xl md:text-8xl'>{title}</p>
         <p className='font-normal text-xs md:text-3xl'>{content}</p>
       </div>
     </motion.div>
