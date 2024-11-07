@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import Footer from '../components/Footer.astro';
 import { Header } from '../components/Header';
 import { Nav } from '../components/Nav';
@@ -22,6 +23,7 @@ const { title } = Astro.props;
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body
     class='h-dvh w-dvw min-h-dvh min-w-full flex-1 bg-primary font-raleway text-secondary antialiased'
@@ -31,10 +33,9 @@ const { title } = Astro.props;
       <slot />
     </SmoothScroll>
     <Footer />
-  </body>
-
-  <script>
+  </body><script>
     import { isMobile } from '../stores/app.store';
+
     const checkMobile = () => {
       if (window.innerWidth < 768) {
         isMobile.set(true);

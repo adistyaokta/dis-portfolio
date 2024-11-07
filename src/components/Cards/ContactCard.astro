@@ -3,16 +3,25 @@ import { Icon } from 'astro-icon/components';
 
 type ContactCardProps = {
   name: string;
+  path: string;
 };
 
-const { name } = Astro.props as ContactCardProps;
+const { name, path } = Astro.props as ContactCardProps;
 ---
 
 <div
   class='flex items-center gap-0 h-20 md:h-32 max-h-20 md:max-h-full border-t border-secondary/50'
 >
-  <div class='flex items-center gap-1 md:gap-8'>
-    <p class='font-raleway font-bold uppercase text-5xl md:text-9xl'>{name}</p>
-    <Icon name='mdi:arrow-up' size={25} class={'rotate-45 md:scale-[3]'} />
-  </div>
+  <a href={path} target='_blank' class='cursor-pointer group'>
+    <div class='flex items-center gap-1 md:gap-8'>
+      <p class='font-raleway font-bold uppercase text-5xl md:text-9xl'>
+        {name}
+      </p>
+      <Icon
+        name='mdi:arrow-up'
+        size={25}
+        class={'rotate-45 md:scale-[3] group-hover:scale-[2] group-hover:rotate-90 group-hover:translate-x-2 group-hover:md:translate-x-2 group-hover:md:scale-[6] transition-all duration-1000'}
+      />
+    </div>
+  </a>
 </div>

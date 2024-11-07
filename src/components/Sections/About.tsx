@@ -30,14 +30,14 @@ export const About = () => {
 
   return (
     <div className='w-full flex flex-col gap-14 md:gap-40 '>
-      <Section title='About'>
+      <Section id='about' title='About'>
         <div className='text-pretty md:text-4xl md:max-w-[70%] text-secondary/70 border-l-2 pl-2'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel porta
           diam. Praesent ultricies enim sit amet lectus semper consectetur.
           Donec eu suscipit sem, lacinia vulputate justo.
         </div>
       </Section>
-      <Section title='Experience'>
+      <Section id='experience' title='Experience'>
         <div ref={element} className=''>
           <div className='font-medium text-xs md:text-xl text-right'>
             Work | Education

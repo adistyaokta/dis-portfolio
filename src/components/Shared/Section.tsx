@@ -9,10 +9,17 @@ type SectionProps = {
   title: string;
   children: React.ReactNode;
   ref?: any;
+  id?: string;
   minHeight?: string;
 };
 
-export const Section = ({ title, children, ref, minHeight }: SectionProps) => {
+export const Section = ({
+  title,
+  children,
+  ref,
+  minHeight,
+  id,
+}: SectionProps) => {
   const $isMobile = useStore(isMobile);
   const { scrollY } = useScroll();
 
@@ -24,13 +31,14 @@ export const Section = ({ title, children, ref, minHeight }: SectionProps) => {
 
   return (
     <motion.section
+      id={id}
       ref={ref}
       className={cn(
         `w-full min-w-full flex flex-col justify-start`,
         minHeight && `${minHeight}`
       )}
     >
-      <div className='flex flex-col'>
+      <div className='flex flex-col pt-14'>
         <Paragraph value={title} />
         {children}
       </div>

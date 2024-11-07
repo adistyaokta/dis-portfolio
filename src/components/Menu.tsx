@@ -1,38 +1,54 @@
+import { useStore } from '@nanostores/react';
 import { contactLink, navLink } from '../types/constant';
+import { useLenis } from 'lenis/react';
+import { isMenuOpen } from '../stores/app.store';
+import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
 
-const Item = ({ name, path }: { name: string; path?: string }) => {
-  return (
-    <a href={path} className='size-full'>
-      <div className='size-full border-b-2 flex items-center justify-end text-7xl font-black font-raleway leading-normal uppercase hover:tracking-wide hover:md:tracking-widest transition-all duration-300'>
-        {name}
-      </div>
-    </a>
-  );
+type ItemProps = {
+  name: string;
+  path: string;
+  icon?: string;
 };
 
-const ContactLink = ({ name, path }: { name: string; path?: string }) => {
+const Item = ({ name, path }: ItemProps) => {
+  const lenis = useLenis();
+  const $isMenuOpen = useStore(isMenuOpen);
   return (
-    <div className='w-full text-left md:text-3xl font-raleway font-semibold border-l border-b border-secondary/70 px-1 hover:bg-secondary/70 hover:text-primary/90 transition-all duration-300'>
+    <div
+      onClick={() => {
+        lenis?.scrollTo(`${path}`);
+        isMenuOpen.set(!$isMenuOpen);
+      }}
+      className='size-full md:border-t-2 px-4 md:border-secondary flex items-center justify-end text-5xl md:text-9xl font-black font-raleway leading-normal uppercase hover:tracking-wide hover:md:tracking-widest cursor-pointer transition-all duration-300 delay-150'
+    >
       {name}
     </div>
   );
 };
 
+const ContactLink = ({ name, path, icon }: ItemProps) => {
+  return (
+    <a href={path} target='_blank' className='w-1/2 md:w-full px-1'>
+      <div className=' md:text-3xl flex justify-center items-center gap-2 font-raleway font-semibold hover:bg-secondary/70 hover:text-primary/90 transition-all duration-300 cursor-pointer'>
+        <Icon icon={icon!} className='hidden md:inline-block' />
+        <span>{name}</span>
+      </div>
+    </a>
+  );
+};
+
 export const Menu = () => {
   return (
-    <aside className='max-h-[90%] h-full flex flex-col justify-between px-2 text-secondary bg-primary'>
-      <div className='h-3/4 w-full flex flex-col items-end justify-center gap-2'>
+    <aside className='h-full flex flex-col justify-between'>
+      <div className='h-full flex flex-col'>
         {navLink.map((item) => (
-          <Item name={item.name} path={item.path} />
+          <Item key={item.name} name={item.name} path={item.path} />
         ))}
       </div>
-      <div className='h-fit flex flex-col justify-end gap-4'>
-        <div className='font-bold font-raleway uppercase md:text-4xl text-primary bg-secondary/60 selection:bg-secondary'>
-          Find me on
-        </div>
-        <div className='grid grid-cols-2 gap-4'>
+      <div className='h-fit flex mb-14'>
+        <div className='flex flex-wrap md:flex-nowrap w-full'>
           {contactLink.map((item) => (
-            <ContactLink name={item.name} path={item.path} />
+            <ContactLink name={item.name} path={item.path} icon={item.icon} />
           ))}
         </div>
       </div>

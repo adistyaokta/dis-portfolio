@@ -43,7 +43,7 @@ export const Hero = () => {
   return (
     <motion.div
       {...anim(opacity)}
-      id='hero'
+      id='home'
       className='w-full h-full min-h-dvh flex flex-col justify-between select-none'
     >
       <div className='flex flex-col flex-1 justify-center items-start font-anton overflow-hidden text-secondary uppercase'>
