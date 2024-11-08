@@ -33,23 +33,5 @@ const { title } = Astro.props;
       <slot />
     </SmoothScroll>
     <Footer />
-  </body><script>
-    import { isMobile } from '../stores/app.store';
-
-    const checkMobile = () => {
-      if (window.innerWidth < 768) {
-        isMobile.set(true);
-      } else {
-        isMobile.set(false);
-      }
-    };
-
-    window.addEventListener('load', checkMobile);
-
-    window.addEventListener('resize', checkMobile);
-
-    window.addEventListener('unload', () => {
-      window.removeEventListener('resize', checkMobile);
-    });
-  </script>
+  </body>
 </html>

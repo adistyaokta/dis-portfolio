@@ -2,6 +2,8 @@ import React from 'react';
 import { Icon } from '@iconify-icon/react';
 import { cn } from '../../utils/utils';
 import { motion, MotionValue, useTransform } from 'framer-motion';
+import { useStore } from '@nanostores/react';
+import { isMobile } from '../../stores/app.store';
 
 type SkillCardProps = {
   skillName: string;
@@ -15,7 +17,6 @@ type SkillCardProps = {
 export const SkillCard: React.FC<SkillCardProps> = ({
   skillName,
   icon,
-  iconSize = 50,
   className = '',
   progress,
   range,
@@ -28,21 +29,19 @@ export const SkillCard: React.FC<SkillCardProps> = ({
         opacity,
         x,
       }}
-      // transition={{
-      //   duration: 5,
-      // }}
       className={cn(
-        'relative w-full min-h-40 md:min-h-72 max-h-40 aspect-square flex flex-col p-1 gap-1 bg-secondary/95',
+        'relative group w-full min-h-40 md:min-h-72 max-h-40 aspect-square flex flex-col p-1 gap-1 bg-secondary',
         className
       )}
     >
-      <div className='flex-1 flex justify-center items-center'>
-        <Icon
-          icon={icon}
-          className={'scale-[5.5] text-[#1E1E1C] md:scale-[10]'}
-        />
-      </div>
-      <div className='w-full min-h-8 max-h-8 md:min-h-16 bg-primary flex justify-center items-center font-semibold uppercase text-sm md:text-3xl md:tracking-widest'>
+      <Icon
+        icon={icon}
+        height={75}
+        className={
+          'flex-1 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-secondary/95 transition-all duration-200 delay-75'
+        }
+      />
+      <div className='w-full min-h-8 max-h-8 md:min-h-16 bg-primary flex justify-center items-center font-orbitron font-bold uppercase text-sm md:text-3xl md:tracking-widest '>
         {skillName}
       </div>
     </motion.div>

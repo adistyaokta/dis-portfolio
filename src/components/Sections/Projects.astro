@@ -2,32 +2,7 @@
 import ProjectCard from '../Cards/ProjectCard.astro';
 import { Section } from '../Shared/Section';
 
-// import { projects } from '../../data/projects';
-
-export type Project = {
-  title: string;
-  tag: string[];
-  imagePath: string;
-};
-
-export const projects: Project[] = [
-  {
-    title: 'dis-cover!',
-    tag: ['React', 'NestJs'],
-    imagePath: 'src/assets/discover-1.png',
-  },
-  {
-    title: 'myLviors',
-    tag: ['React', 'NestJs'],
-    imagePath: 'src/assets/discover-1.png',
-  },
-];
-
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/*.{jpeg,jpg,png,gif}'
-);
-
-console.log(images[projects[0].imagePath]);
+import { projects } from '../../data/projects';
 ---
 
 <Section id='projects' title='Projects' client:load>
@@ -36,9 +11,11 @@ console.log(images[projects[0].imagePath]);
       projects?.map((item) => {
         return (
           <ProjectCard
+            key={item.title}
             title={item.title}
             tag={item.tag}
-            path={images[item.imagePath]}
+            image={item.image}
+            path={item.path}
           />
         );
       })

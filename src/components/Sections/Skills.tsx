@@ -2,21 +2,13 @@ import { useRef } from 'react';
 import { SkillCard } from '../Cards/SkillCard';
 import { Section } from '../Shared/Section';
 import { useScroll } from 'framer-motion';
-
-const skills = [
-  { name: 'react', icon: 'mdi:react' },
-  { name: 'astro', icon: 'devicon-plain:astro' },
-  { name: 'astro', icon: 'devicon-plain:astro' },
-  { name: 'astro', icon: 'devicon-plain:astro' },
-  { name: 'astro', icon: 'devicon-plain:astro' },
-  { name: 'astro', icon: 'devicon-plain:astro' },
-];
+import { skills } from '../../data/skills';
 
 export const Skills = () => {
   const element = useRef(null);
   const { scrollYProgress } = useScroll({
     target: element,
-    offset: ['start 0.8', 'start 0.45'],
+    offset: ['start end', 'start 0.45'],
   });
 
   return (
@@ -38,16 +30,6 @@ export const Skills = () => {
             />
           );
         })}
-        {/* <SkillCard skillName='react' icon='mdi:react' />
-        <SkillCard skillName='astro' icon='devicon-plain:astro' />
-        <SkillCard skillName='typescript' icon='mdi:language-typescript' />
-        <SkillCard skillName='javascript' icon='mdi:language-javascript' />
-        <SkillCard
-          skillName='nextjs'
-          icon='devicon-plain:nextjs'
-          className='md:col-start-2'
-        />
-        <SkillCard skillName='typescript' icon='mdi:language-typescript' /> */}
       </div>
     </Section>
   );

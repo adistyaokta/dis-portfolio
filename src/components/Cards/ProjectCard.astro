@@ -1,35 +1,35 @@
 ---
 import { Image } from 'astro:assets';
-import { cn } from '../../utils/utils';
 import { type Project } from '../../data/projects';
 
-const { title, tag, imagePath } = Astro.props as Project;
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/*.{jpeg,jpg,png,gif}'
-);
-
-console.log(imagePath, 'p');
-
-// console.log(images[imagePath](), 'path');
+const { title, tag, image, path } = Astro.props as Project;
 ---
 
 <div
   class='relative group border-t-2 first:border-t-0 last:border-b-2 border-secondary/60'
 >
   <div class='h-full min-h-32 md:min-h-40 flex flex-col justify-center'>
-    <div class='font-bold uppercase tracking-wide text-xl md:text-4xl'>
-      {title}
+    <div
+      class='font-bold font-orbitron uppercase tracking-wide text-xl md:text-4xl'
+    >
+      <a href={path} target='_blank' class='cursor-pointer group'>
+        {title}
+      </a>
     </div>
   </div>
   <div
-    class='opacity-0 absolute top-0 right-0 md:right-10 h-28 md:h-60 aspect-video bg-secondary z-40 translate-y-2 md:-translate-y-10 rounded-lg group-hover:opacity-100 transition-all hover:md:scale-125 delay-100 duration-300'
+    class='opacity-0 absolute top-0 right-0 md:right-10 h-28 md:h-60 aspect-video bg-secondary z-40 translate-y-2 md:-translate-y-10 group-hover:opacity-100 transition-all hover:md:scale-105 delay-100 duration-300'
   >
-    <!-- <Image src={images[imagePath!]()} alt={title} /> -->
-    <div class='flex justify-start gap-1 absolute bottom-3 right-3'>
+    <Image
+      src={image}
+      alt={`${title}-preview`}
+      class='absolute inset-0 w-full h-full object-cover'
+    />
+    <div class='flex justify-end gap-1 absolute bottom-3 right-3'>
       {
         tag?.map((item) => {
           return (
-            <span class='text-sm capitalize px-4 rounded-sm text-secondary bg-primary/70 font-bold'>
+            <span class='text-sm capitalize px-2 rounded-sm text-secondary bg-primary/70 font-bold'>
               {item}
             </span>
           );
