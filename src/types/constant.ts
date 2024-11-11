@@ -19,10 +19,10 @@ export const contactLink = [
     path: 'https://github.com/adistyaokta',
     icon: 'mdi:github',
   },
-  {
-    name: 'instagram',
-    path: 'https://www.instagram.com/adstyx_/',
-    icon: 'mdi:instagram',
-  },
+  // {
+  //   name: 'instagram',
+  //   path: 'https://www.instagram.com/adstyx_/',
+  //   icon: 'mdi:instagram',
+  // },
 ] as const;
 export type ContactLink = (typeof contactLink)[number];

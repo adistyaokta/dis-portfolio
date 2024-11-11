@@ -36,7 +36,6 @@
 // };
 
 import { useStore } from '@nanostores/react';
-import React from 'react';
 import { isMenuOpen } from '../stores/app.store';
 
 export const Nav = () => {
@@ -47,7 +46,9 @@ export const Nav = () => {
 
   return (
     <nav className='min-h-10 md:h-14 w-full flex justify-between items-center px-2 text-secondary bg-transparent select-none'>
-      <div className='font-orbitron uppercase font-black text-3xl md:text-5xl'>dis</div>
+      <div className='font-orbitron uppercase font-black text-3xl md:text-5xl'>
+        dis
+      </div>
       <div
         className='py-2 h-full flex justify-end items-center uppercase font-bold font-raleway text-2xl md:text-4xl hover:cursor-pointer'
         onClick={toggleMenu}
