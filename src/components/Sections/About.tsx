@@ -3,27 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { TimelineCard } from '../Cards/TimelineCard';
 import { Section } from '../Shared/Section';
 import { cn } from '../../utils/utils';
-
-const works = [
-  {
-    title: 'Frontend Web Developer',
-    time: { from: '2023', to: 'NOW' },
-    content: 'at PT Lviors Jaya Sentosa',
-  },
-  {
-    title: 'Frontend Developer',
-    time: { from: '2022', to: '2022' },
-    content: 'at LPPM Untag Surabaya',
-  },
-];
-
-const edus = [
-  {
-    title: 'Informatics Engineering',
-    time: { from: '2019', to: '2023' },
-    content: 'at Universitas 17 Agustus 1945 Surabaya',
-  },
-];
+import { works } from '../../data/works';
+import { edus } from '../../data/edus';
 
 export const About = () => {
   const element = useRef(null);
@@ -39,11 +20,12 @@ export const About = () => {
         <div className='text-balance md:text-4xl md:max-w-[75%] flex gap-2 text-secondary/70 '>
           <div className='w-2 bg-secondary/90'> </div>
           <p>
-            Hello, I'm a web developer that currently focused on frontend
-            development. I enjoy turning creative ideas into functional design
-            that provides a clean user experiences as smooth as possible. I've
-            been working modern framework like React and NextJs, and a lil' bit
-            of backend framework like NestJs.
+            Hello, I am a web developer currently focusing on frontend
+            development. I love turning creative ideas into functional designs
+            that provide the cleanest and smoothest user experience possible. I
+            have worked with modern frameworks like React and NextJs, and a bit
+            of backend frameworks like NestJs and also android platform using
+            java.
           </p>
         </div>
       </Section>

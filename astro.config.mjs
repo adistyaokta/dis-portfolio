@@ -16,6 +16,7 @@ export default defineConfig({
       include: {
         mdi: ['*'],
         'devicon-plain': ['*'],
+        'line-md': ['*']
       },
     }),
   ],
