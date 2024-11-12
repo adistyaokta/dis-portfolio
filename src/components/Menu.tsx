@@ -3,6 +3,7 @@ import { contactLink, navLink } from '../types/constant';
 import { useLenis } from 'lenis/react';
 import { isMenuOpen } from '../stores/app.store';
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
+import { FlipCard } from './Cards/FlipCard';
 
 type ItemProps = {
   name: string;
@@ -40,9 +41,16 @@ const ContactLink = ({ name, path, icon }: ItemProps) => {
 export const Menu = () => {
   return (
     <aside className='h-full flex flex-col justify-between'>
-      <div className='h-full flex flex-col'>
+      <div className='h-full flex flex-col items-end'>
         {navLink.map((item) => (
-          <Item key={item.name} name={item.name} path={item.path} />
+          // <Item key={item.name} name={item.name} path={item.path} />
+          <FlipCard
+            key={item.name}
+            name={item.name}
+            path={item.path}
+            className='w-full text-right text-5xl md:text-[9rem]'
+            lineHeight={1.5}
+          />
         ))}
       </div>
       <div className='h-fit flex mb-14'>

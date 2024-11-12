@@ -8,16 +8,21 @@ export const navLink = [
 export type NavLink = (typeof navLink)[number];
 
 export const contactLink = [
-  { name: 'email', path: 'mailto:adiztya77@gmail.com', icon: 'mdi:email' },
+  { name: 'Email', path: 'mailto:adiztya77@gmail.com', icon: 'mdi:email' },
   {
-    name: 'linkedin',
+    name: 'Linkedin',
     path: 'https://www.linkedin.com/in/adistyaoktaviano',
     icon: 'mdi:linkedin',
   },
   {
-    name: 'github',
+    name: 'Github',
     path: 'https://github.com/adistyaokta',
-    icon: 'mdi:github',
+    icon: 'jam:github',
+  },
+  {
+    name: 'Resume',
+    path: '/CV_AdistyaOkta.pdf',
+    icon: 'mdi:file-document',
   },
   // {
   //   name: 'instagram',
