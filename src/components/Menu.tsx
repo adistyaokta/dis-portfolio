@@ -1,9 +1,8 @@
+import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
 import { useStore } from '@nanostores/react';
-import { contactLink, navLink } from '../types/constant';
 import { useLenis } from 'lenis/react';
 import { isMenuOpen } from '../stores/app.store';
-import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
-import { FlipCard } from './Cards/FlipCard';
+import { contactLink, navLink } from '../types/constant';
 
 type ItemProps = {
   name: string;

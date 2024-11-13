@@ -128,6 +128,15 @@ export const ProjectCard = ({
         className='absolute z-0 h-24 w-32 rounded-md object-cover md:h-48 md:w-64'
         alt={`Image for ${title}`}
       />
+      <div className='absolute right-0 bottom-0 flex gap-2'>
+        {tag?.map((item) => {
+          return (
+            <span className='text-xs md:text-sm capitalize px-2 rounded-sm text-secondary bg-primary/70 font-bold'>
+              {item}
+            </span>
+          );
+        })}
+      </div>
 
       <motion.div
         variants={{

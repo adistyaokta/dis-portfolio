@@ -1,9 +1,7 @@
-import React from 'react';
 import { Icon } from '@iconify-icon/react';
-import { cn } from '../../utils/utils';
 import { motion, MotionValue, useTransform } from 'framer-motion';
-import { useStore } from '@nanostores/react';
-import { isMobile } from '../../stores/app.store';
+import React from 'react';
+import { cn } from '../../utils/utils';
 
 type SkillCardProps = {
   skillName: string;

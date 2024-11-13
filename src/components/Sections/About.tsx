@@ -1,12 +1,11 @@
-import { useScroll } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
-import { TimelineCard } from '../Cards/TimelineCard';
-import { Section } from '../Shared/Section';
-import { cn } from '../../utils/utils';
-import { works } from '../../data/works';
-import { edus } from '../../data/edus';
 import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
+import { useState } from 'react';
+import { edus } from '../../data/edus';
+import { works } from '../../data/works';
+import { cn } from '../../utils/utils';
+import { TimelineCard } from '../Cards/TimelineCard';
 import { Paragraph } from '../Shared/Paragraph';
+import { Section } from '../Shared/Section';
 
 export const About = () => {
   const [isEducation, setIsEducation] = useState(false);

@@ -31,12 +31,6 @@ export const Hero = () => {
     ['0%', $isMobile ? '300%' : '250%']
   );
 
-  const x = useTransform(
-    scrollY,
-    [0, 700],
-    ['0%', $isMobile ? '-400%' : '-110%']
-  );
-
   const springScale = useSpring(scale, { stiffness: 200, damping: 30 });
   const springY = useSpring(y, { stiffness: 300, damping: 30 });
 

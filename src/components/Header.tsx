@@ -1,9 +1,8 @@
 import { useStore } from '@nanostores/react';
-import { Menu } from './Menu';
-import { Nav } from './Nav';
 import { isMenuOpen } from '../stores/app.store';
 import { cn } from '../utils/utils';
-import { useEffect } from 'react';
+import { Menu } from './Menu';
+import { Nav } from './Nav';
 
 export const Header = () => {
   const $isMenuOpen = useStore(isMenuOpen);

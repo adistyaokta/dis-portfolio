@@ -1,4 +1,4 @@
-import type { Variant, Variants } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
 
 export const cn = (...classes: (string | undefined | false)[]) => {

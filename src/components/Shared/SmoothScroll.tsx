@@ -1,4 +1,4 @@
-import { ReactLenis, useLenis } from 'lenis/react';
+import { ReactLenis } from 'lenis/react';
 import type React from 'react';
 
 export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
