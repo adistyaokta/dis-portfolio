@@ -23,7 +23,7 @@ export const About = () => {
           <div className='font-medium text-xs md:text-xl text-right text-secondary/95 flex justify-center gap-1 my-5'>
             <div
               className={cn(
-                'cursor-pointer min-w-40 min-h-7 flex items-center justify-center gap-2 z-20 bg-secondary/20 font-bold text-center text-secondary/40 transition-all duration-300',
+                'cursor-pointer min-w-40 w-full md:max-w-40 min-h-7 flex items-center justify-center gap-2 z-20 bg-secondary/20 font-bold text-center text-secondary/40 transition-all duration-300',
                 !isEducation && 'bg-secondary text-primary'
               )}
               onClick={() => setIsEducation(false)}
@@ -32,7 +32,7 @@ export const About = () => {
             </div>
             <div
               className={cn(
-                'cursor-pointer min-w-40 min-h-7 flex items-center justify-center gap-2 z-20 bg-secondary/20 font-bold text-center text-secondary/40 transition-all duration-300',
+                'cursor-pointer min-w-40 w-full md:max-w-40 min-h-7 flex items-center justify-center gap-2 z-20 bg-secondary/20 font-bold text-center text-secondary/40 transition-all duration-300',
                 isEducation && 'bg-secondary text-primary'
               )}
               onClick={() => setIsEducation(true)}

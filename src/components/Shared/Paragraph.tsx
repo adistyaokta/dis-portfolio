@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { cn } from '../../utils/utils';
 
 type ParagraphProps = {
@@ -46,7 +46,7 @@ export const Word = ({
   const step = amount / children.length;
 
   return (
-    <span className='relative mr-3 mt-3 capitalize font-semibold text-xl md:text-5xl'>
+    <span className='relative mr-1 xl:mr-3 mt-2 capitalize font-semibold text-xl md:text-5xl'>
       {chars.map((char: any, i: number) => {
         const start = range[0] + step * i;
         const end = range[0] + step * (i + 1);
@@ -72,7 +72,7 @@ const Character = ({
   const opacity = useTransform(progress, range, [0, 1]);
   return (
     <span>
-      <span className='absolute opacity-[0.1] normal-case font-semibold'>
+      <span className='absolute opacity-[0.3] normal-case font-semibold'>
         {children}
       </span>
       <motion.span style={{ opacity }}>{children}</motion.span>
