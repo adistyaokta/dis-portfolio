@@ -1,5 +1,5 @@
 ---
-import ProjectCard from '../Cards/ProjectCard.astro';
+import { ProjectCard } from '../Cards/ProjectCard';
 import { Section } from '../Shared/Section';
 
 import { projects } from '../../data/projects';
@@ -10,13 +10,21 @@ import { projects } from '../../data/projects';
     {
       projects?.map((item) => {
         return (
+          // <ProjectCard
+          //   key={item.title}
+          //   title={item.title}
+          //   tag={item.tag}
+          //   image={item.image}
+          //   path={item.path}
+          //   github={item.github}
+          // />
           <ProjectCard
-            key={item.title}
             title={item.title}
             tag={item.tag}
             image={item.image}
             path={item.path}
             github={item.github}
+            client:load
           />
         );
       })

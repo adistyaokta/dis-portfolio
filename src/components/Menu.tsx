@@ -43,14 +43,7 @@ export const Menu = () => {
     <aside className='h-full flex flex-col justify-between'>
       <div className='h-full flex flex-col items-end'>
         {navLink.map((item) => (
-          // <Item key={item.name} name={item.name} path={item.path} />
-          <FlipCard
-            key={item.name}
-            name={item.name}
-            path={item.path}
-            className='w-full text-right text-5xl md:text-[9rem]'
-            lineHeight={1.5}
-          />
+          <Item key={item.name} name={item.name} path={item.path} />
         ))}
       </div>
       <div className='h-fit flex mb-14'>

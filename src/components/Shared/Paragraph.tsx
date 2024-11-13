@@ -4,23 +4,20 @@ import { cn } from '../../utils/utils';
 
 type ParagraphProps = {
   value: string;
-  reverse?: boolean;
 };
 
-export const Paragraph = ({ value, reverse = false }: ParagraphProps) => {
+export const Paragraph = ({ value }: ParagraphProps) => {
   const element = useRef(null);
   const { scrollYProgress } = useScroll({
     target: element,
-    offset: ['start 0.9', 'start 0.45'],
+    offset: ['start 0.8', 'start 0.45'],
   });
 
   const words = value.split(' ');
   return (
     <p
       ref={element}
-      className={cn(
-        'flex flex-wrap leading-none text-xl md:text-5xl capitalize font-extrabold'
-      )}
+      className={cn('flex flex-wrap leading-none text-xl md:text-5xl ')}
     >
       {words.map((word, i) => {
         const start = i / words.length;
@@ -49,7 +46,7 @@ export const Word = ({
   const step = amount / children.length;
 
   return (
-    <span className='relative mr-3 mt-3 capitalize font-extrabold text-xl md:text-5xl'>
+    <span className='relative mr-3 mt-3 capitalize font-semibold text-xl md:text-5xl'>
       {chars.map((char: any, i: number) => {
         const start = range[0] + step * i;
         const end = range[0] + step * (i + 1);
@@ -75,7 +72,7 @@ const Character = ({
   const opacity = useTransform(progress, range, [0, 1]);
   return (
     <span>
-      <span className='absolute opacity-[0.1] normal-case font-extrabold'>
+      <span className='absolute opacity-[0.1] normal-case font-semibold'>
         {children}
       </span>
       <motion.span style={{ opacity }}>{children}</motion.span>

@@ -9,7 +9,7 @@ export type Project = {
   tag: string[];
   image: ImageMetadata;
   path?: string;
-  github?: string
+  github?: string;
 };
 
 export const projects: Project[] = [
@@ -18,17 +18,17 @@ export const projects: Project[] = [
     tag: ['Typescript', 'React', 'NestJs'],
     image: discoverImage,
     path: 'https://dis-cover.vercel.app/',
-    github: 'https://github.com/adistyaokta/discover-fe'
+    github: 'https://github.com/adistyaokta/discover-fe',
   },
   {
-    title: 'gastritis diagnosis web ver.',
+    title: 'Gastritis Diagnosis Web Ver.',
     tag: ['PHP', 'Javascript', 'React', 'Laravel'],
     image: gastritisWebImage,
     path: '',
-    github: 'https://github.com/adistyaokta/Gastritis-Diagnosis-Web/'
+    github: 'https://github.com/adistyaokta/Gastritis-Diagnosis-Web/',
   },
   {
-    title: 'gastritis diagnosis',
+    title: 'Gastritis Diagnosis',
     tag: ['Java', 'Android', 'Expert System'],
     image: gastritisImage,
     path: '',
@@ -39,6 +39,6 @@ export const projects: Project[] = [
     tag: ['Javascript', 'React'],
     image: xanaMovieImage,
     path: 'https://xana-movie-space.vercel.app/',
-    github: 'https://github.com/adistyaokta/xana-movie-space'
+    github: 'https://github.com/adistyaokta/xana-movie-space',
   },
 ];

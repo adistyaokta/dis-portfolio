@@ -1,8 +1,6 @@
+import { motion } from 'framer-motion';
 import type React from 'react';
 import { cn } from '../../utils/utils';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useStore } from '@nanostores/react';
-import { isMobile } from '../../stores/app.store';
 import { Paragraph } from './Paragraph';
 
 type SectionProps = {
@@ -20,26 +18,12 @@ export const Section = ({
   minHeight,
   id,
 }: SectionProps) => {
-  const $isMobile = useStore(isMobile);
-  const { scrollY } = useScroll();
-
-  const y = useTransform(
-    scrollY,
-    [0, 700],
-    ['0%', $isMobile ? '300%' : '250%']
-  );
-
   return (
-    <motion.section
-      id={id}
-      ref={ref}
-      className={cn(
-        `w-full min-w-full flex flex-col justify-start`,
-        minHeight && `${minHeight}`
-      )}
-    >
-      <div className='flex flex-col pt-14'>
-        <Paragraph value={title} />
+    <motion.section id={id} ref={ref}>
+      <div className='h-full pt-14'>
+        <p className='flex flex-wrap leading-none text-xl md:text-5xl capitalize font-extrabold'>
+          {title}
+        </p>
         {children}
       </div>
     </motion.section>

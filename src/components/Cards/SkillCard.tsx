@@ -30,7 +30,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({
         x,
       }}
       className={cn(
-        'relative group w-full min-h-40 md:min-h-72 max-h-40 aspect-square flex flex-col p-1 gap-1 bg-secondary',
+        'relative group w-full min-h-40 md:min-h-72 max-h-40 aspect-square flex flex-col p-1 gap-1 bg-secondary truncate overflow-hidden',
         className
       )}
     >
@@ -41,7 +41,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({
           'flex-1 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-secondary/95 transition-all duration-200 delay-75'
         }
       />
-      <div className='w-full min-h-8 max-h-8 md:min-h-16 bg-primary flex justify-center items-center font-orbitron font-bold uppercase text-sm md:text-3xl md:tracking-widest '>
+      <div className='w-full min-h-8 max-h-8 md:min-h-16 bg-primary flex justify-center items-center font-orbitron font-bold uppercase text-sm md:text-xl lg:text-4xl md:tracking-widest truncate'>
         {skillName}
       </div>
     </motion.div>
