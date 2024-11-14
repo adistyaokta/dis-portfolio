@@ -69,26 +69,32 @@ export const ProjectCard = ({
           }}
           className='relative z-10 block text-2xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl'
         >
-          {title.split('').map((l, i) => (
-            <motion.span
-              variants={{
-                initial: { x: 0 },
-                whileHover: { x: 10 },
-              }}
-              transition={{ type: 'spring' }}
-              className='inline-block font-bold font-orbitron'
-              key={i}
-            >
-              {l}
-            </motion.span>
-          ))}
+          {title.split('').map((l, i) => {
+            if (l === ' ') {
+              return <span key={i}>&nbsp;</span>;
+            }
+
+            return (
+              <motion.span
+                key={i}
+                variants={{
+                  initial: { x: 0 },
+                  whileHover: { x: 10 },
+                }}
+                transition={{ type: 'spring' }}
+                className='inline-block font-bold'
+              >
+                {l}
+              </motion.span>
+            );
+          })}
         </motion.span>
         <span className='relative z-10 mt-2 flex gap-4 text-base text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50'>
           {github && (
             <a
               href={github}
               target='_blank'
-              className='font-raleway flex items-center gap-1 w-fit opacity-0 cursor-pointer group-hover:opacity-100 hover:underline hover:underline-offset-2 transition-all duration-300'
+              className='font-raleway flex items-center gap-1 w-fit cursor-pointer hover:underline hover:underline-offset-2 transition-all duration-100'
             >
               Github <Icon icon='line-md:github-loop' />
             </a>
@@ -97,7 +103,7 @@ export const ProjectCard = ({
             <a
               href={path}
               target='_blank'
-              className='flex items-center gap-1 group/visit font-raleway w-fit opacity-0 cursor-pointer group-hover:opacity-100 hover:underline hover:underline-offset-2 transition-all duration-300'
+              className='flex items-center gap-1 group/visit font-raleway w-fit cursor-pointer hover:underline hover:underline-offset-2 transition-all duration-100'
             >
               Visit Project{' '}
               <Icon
