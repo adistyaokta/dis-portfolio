@@ -135,9 +135,9 @@ export const ProjectCard = ({
         alt={`Image for ${title}`}
       />
       <div className='absolute right-0 bottom-0 flex gap-2'>
-        {tag?.map((item) => {
+        {tag?.map((item, index) => {
           return (
-            <span className='text-xs md:text-sm capitalize px-2 rounded-sm text-secondary bg-primary/70 font-bold'>
+            <span key={`${item}-${index}`} className='text-xs md:text-sm capitalize px-2 rounded-sm text-secondary bg-primary/70 font-bold'>
               {item}
             </span>
           );

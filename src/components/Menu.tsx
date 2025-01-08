@@ -48,7 +48,7 @@ export const Menu = () => {
       <div className='h-fit flex mb-14'>
         <div className='flex flex-wrap md:flex-nowrap w-full'>
           {contactLink.map((item) => (
-            <ContactLink name={item.name} path={item.path} icon={item.icon} />
+            <ContactLink key={item.name} name={item.name} path={item.path} icon={item.icon} />
           ))}
         </div>
       </div>
